@@ -7,12 +7,13 @@ const text = ref('請輸入樣式名稱')
 const fruits = ref(['蘋果', '芭樂', '香蕉', '柳橙',])
 const textTrue = ref('')
 const textStyle = ref({ color: 'red', fontWeight: 'bold', fontSize: '20px' })
+const gender = ref('男')
 // const class30 = ref('font30')
 
 const isFont30 = ref(false)
 
 
-const onClick = (item, index) => {
+const showFruit = (item, index) => {
 
   console.log(`index值: ${index + 1}`)
   alert(`你選擇的水果是${item}`)
@@ -36,6 +37,17 @@ const setLocalStorage = () => {
   localStorage.setItem('userNote', note.value)
 }
 
+const submitForm = () => {
+  console.log()
+}
+
+const handleChange = (item) => {
+  alert(item)
+}
+
+const setGender = () => {
+  console.log(gender.value)
+}
 </script>
 
 
@@ -50,18 +62,18 @@ const setLocalStorage = () => {
   <p v-if="isFont30">{{ '我是font30' }}</p>
   <p v-else>我是font20</p>
   <ul id="fruit-list">
-    <li v-for="(item, index) in fruits" @click="onClick(item, index)">{{ index + 1 }} . {{ item }}</li>
+    <li v-for="(item, index) in fruits" @click="showFruit(item, index)">{{ index + 1 }} . {{ item }}</li>
   </ul>
 
 
-  <form action="" id="myForm">
+  <form action="" id="myForm" @submit="submitForm">
 
 
-    <select name="" id="">
-      <option value=""></option>
+    <select name="fruit" id="Fruit" @change="handleChange(item)">
+      <option value="" v-for="item in fruits" :value="item">{{ item }}</option>
     </select>
-    <input type="radio" name="gender" id="" v-model="gender" checked> 男
-    <input type="radio" name="gender" id="" v-model="gender"> 女
+    <input type="radio" name="gender" id="" v-model="gender" @click="setGender" value="男"> 男
+    <input type="radio" name="gender" id="" v-model="gender" value="女"> 女
 
   </form>
 
