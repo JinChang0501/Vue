@@ -5,17 +5,17 @@ const routes = [
   {
     path: "/changedivcolor",
     name: "changedivcolor",
-    components: ChangeDivColor,
+    component: ChangeDivColor,
   },
   {
     path: "/piniastore",
     name: "piniastore",
-    components: () => import("./components/PiniaStore.vue"),
+    component: () => import("./components/PiniaStore.vue"),
   },
   {
     path: "/Register",
     name: "Register",
-    components: () => import("./components/Register.vue"),
+    component: () => import("./components/Register.vue"),
   },
 ];
 const router = createRouter({
