@@ -8,6 +8,8 @@
     <li><router-link to="/changedivcolor">ChangeDivColor</router-link></li>
     <li><router-link to="/piniastore">PiniaStore</router-link></li>
     <li><router-link to="/register">Register</router-link></li>
+    <li><router-link to="/axios">AxiosDemo</router-link></li>
+
   </ul>
 
   <div class="container">
